@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="{% static 'accounts/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Profile</h2>
+        {% if cv %}
+            <p>Uploaded at: {{ cv.uploaded_at }}</p>
+            <a href="{{ cv.upload.url }}">Download CV</a>
+        {% else %}
+            <p>No CV uploaded yet.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

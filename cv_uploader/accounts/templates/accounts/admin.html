@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="{% static 'accounts/static/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>All CVs</h2>
+        <ul>
+            {% for cv in cvs %}
+                <li>{{ cv.user.username }} - <a href="{{ cv.upload.url }}">Download CV</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
